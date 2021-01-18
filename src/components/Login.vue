@@ -34,7 +34,7 @@
     methods: {
       processAuthUser: function(){
         var self = this
-        axios.post("https://backmihuertaapp.herokuapp.com/usuarios/validacion", self.user_in,  {headers: {}})
+        axios.post("https://mihuertapp-back.herokuapp.com/usuarios/validacion", self.user_in,  {headers: {}})
           .then((result) => {
             if (result.data.Autenticado){
               this.salida = "Autorización exitosa";

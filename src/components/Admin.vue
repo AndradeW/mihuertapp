@@ -72,7 +72,7 @@ import LoginVue from './Login.vue';
 
         if (this.datosUsuario.username == ""){alert("No ha ingresado un usuario")}
         else {
-        axios.get("https://backmihuertaapp.herokuapp.com/usuario/permiso/"+ 
+        axios.get("https://mihuertapp-back.herokuapp.com/usuario/permiso/"+ 
         this.datosUsuario.username).then((result) => {
           let rol = result.data.permiso
          
@@ -109,7 +109,7 @@ import LoginVue from './Login.vue';
 
         if (this.datosUsuario.username == ""){alert("No ha ingresado un usuario")}
         else {
-        axios.post("https://backmihuertaapp.herokuapp.com/usuarios/crear", self.datosUsuario,  {headers: {}}).then((result)=>{
+        axios.post("https://mihuertapp-back.herokuapp.com/usuarios/crear", self.datosUsuario,  {headers: {}}).then((result)=>{
             var operacion_exitosa =result.data.mensaje 
             if (operacion_exitosa == "Usuario creado exitosamente"){
                 this.salida = "Usuario  " + self.datosUsuario.username + " creado exitosamente"
@@ -128,7 +128,7 @@ import LoginVue from './Login.vue';
        
         if (this.datosUsuario.username == ""){alert("No ha ingresado un usuario")}
         else {
-        axios.delete("https://backmihuertaapp.herokuapp.com/usuario/eliminar/" + this.datosUsuario.username).then((result)=>{
+        axios.delete("https://mihuertapp-back.herokuapp.com/usuario/eliminar/" + this.datosUsuario.username).then((result)=>{
             var operacion_exitosa =result.data.mensaje 
             if (operacion_exitosa == "Usuario eliminado exitosamente"){
                 this.salida = "Usuario " + self.datosUsuario.username + " eliminado exitosamente"
@@ -147,7 +147,7 @@ import LoginVue from './Login.vue';
        
         if (this.datosUsuario.username == ""){alert("No ha ingresado un usuario")}
         else {
-        axios.put("https://backmihuertaapp.herokuapp.com/usuario/actualizar/", self.datosUsuario,  {headers: {}}).then((result)=>{
+        axios.put("https://mihuertapp-back.herokuapp.com/usuario/actualizar/", self.datosUsuario,  {headers: {}}).then((result)=>{
             var operacion_exitosa =result.data.mensaje 
             if (operacion_exitosa == "Usuario actualizado exitosamente"){
                 this.salida = "Usuario " + self.datosUsuario.username + " actualizado exitosamente"

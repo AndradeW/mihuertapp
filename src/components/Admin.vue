@@ -5,7 +5,7 @@
         <form class="form-group" v-on:submit.prevent>
             <!-- <label>Ingrese usuario a consultar:</label> -->
             <br>
-            <input type="text" v-model="datosUsuario.username" placeholder="usuario">
+            <input type="text" v-model="datosUsuario.username" placeholder="Usuario">
             <br>
             <input id="nombre" type="text" v-model="datosUsuario.nombre" placeholder="Nombre">
             <br>
@@ -13,7 +13,7 @@
             <br>
             <input id="zona"  type="text" v-model="datosUsuario.zona" placeholder="Zona">
             <br>
-            <input id="password"  type="password" v-model="datosUsuario.password" placeholder="password">
+            <input id="password"  type="password" v-model="datosUsuario.password" placeholder="Password">
             <br>
             <!--input id="permiso" type="text" v-model="datosUsuario.permiso" placeholder="rol"-->
             <select id="Rol" name="Rol" v-model="datosUsuario.permiso">
@@ -29,6 +29,7 @@
             <button @click="adminBorrar" type="submit" >Borrar</button>
         </form>
         
+        <button @click="dash" type="submit" >Dashboard</button>
         <h5> {{salida}} </h5>
         
     </div>
@@ -158,13 +159,15 @@ import LoginVue from './Login.vue';
         });
 
     }
+    },
+
+    dash: function(){
+        if(this.$route.name != "dashboard"){
+        this.$router.push({name: "dashboard"})
+        }
+
+    }
     
-    
-  }
-
-
-
-
     }
 }
 
@@ -188,7 +191,7 @@ import LoginVue from './Login.vue';
         margin: auto;
         padding: 0%;
         height: 100%;
-        width: 360px;
+        width: 500px;
     
         display: flex;
         justify-content: center;

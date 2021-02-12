@@ -1,13 +1,35 @@
 <template>
 <div id="home" class="home">
   <div class="contenido_home">
+    <div class="container">
     <h1>Bienvenidos a miHuertaAPP</h1>
 
-    <p>miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
+    <p class="homeText" >miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
+      consumidor final. miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
+      consumidor final.miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
+      consumidor final.miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
+      consumidor final.miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
+      consumidor final.
+      <hr>
+
+      <!-- <img src="../assets/home.jpg" alt="home" height="500px"> -->
+      <hr>
+      miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
+      consumidor final.miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
+      consumidor final.miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
+      consumidor final.miHuertAPP es una aplicación web diseñada para que nuestros campesinos puedan comercializar sus productos directamente con el
       consumidor final.
     </p>
+
+    <!-- <img src="../assets/home.jpg" alt="home" height="700px"> -->
     
-    <img src="../assets/noticia.png" alt="noticia">
+   
+    </div>
+
+
+
+
+
     <!-- div id="input">
             <h2>Ingresa a tu CosechaApp</h2>
         <div id="no">
@@ -32,4 +54,24 @@ export default {
 
 <style>
 
+.container {
+  border: 3px solid #7a811b;
+  border-radius: 15px 150px;
+  background: #003d20;
+  //background-color: rgb(17, 104, 92);
+  width: 100%;
+  padding: 60px;
+  //margin: auto;
+  color: white;
+}
+
+.main-components{
+
+  background-image: url("../assets/home.jpg");
+}
+ .contenido_home {
+
+   color:black;
+
+ }
 </style>

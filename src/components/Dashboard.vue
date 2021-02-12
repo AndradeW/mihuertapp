@@ -28,11 +28,20 @@
     <div id="input">
         <button type="button" v-on:click="adminDash">Buscar</button>  
     </div>
+    <div id="input">
+        <button type="button" v-on:click="regresar">Volver</button>  
+    </div>
+    <div id="input">
+        <button type="button" v-on:click="createPDF">Descargar</button>  
+    </div>
 </div>
 
 </template>
 
 <script>
+
+import jsPDF from 'jspdf'
+
 import axios from 'axios';
 import LoginVue from './Login.vue';
    export default {
@@ -88,10 +97,28 @@ import LoginVue from './Login.vue';
              }   
             }
         }).catch((error)=>{
-            alert("ERROR Servidorrewrwe");
+            alert("ERROR Servidor");
             console.log(error);
         });
   },
+
+    regresar: function(){
+        if(this.$route.name != "admin"){
+        this.$router.push({name: "admin"})
+        }
+
+    }
+
+    ,
+
+
+  createPDF () {
+    let pdfName = 'test'; 
+    var doc = new jsPDF();
+    doc.text("Mi huerta App Informe Número 001", 10, 10);
+    //doc.text(this.salida, 10, 30);
+    doc.save(pdfName + '.pdf');
+  }
 
 
     // def obtener_usuarios ():
@@ -148,8 +175,8 @@ import LoginVue from './Login.vue';
         
     }
     
-    .consulta button{
-        width: 48%;
+    #input button{
+        width: 120px;
         height: 40px;
         color: #E5E7E9;
         background: #7a811b;
@@ -158,7 +185,7 @@ import LoginVue from './Login.vue';
         padding: 10px 25px;
         margin: 5px 0;
     }
-    .consulta button:hover{
+    #input button:hover{
         color: #E5E7E9;
         border: 1px solid #E5E7E9;
         background: rgb(4, 116, 0);

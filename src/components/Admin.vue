@@ -13,7 +13,7 @@
             <br>
             <input id="zona"  type="text" v-model="datosUsuario.zona" placeholder="Zona">
             <br>
-            <input id="password"  type="password" v-model="datosUsuario.password" placeholder="Password">
+            <input id="password"  type="password" v-model="datosUsuario.password" placeholder="Contraseña">
             <br>
             <!--input id="permiso" type="text" v-model="datosUsuario.permiso" placeholder="rol"-->
             <select id="Rol" name="Rol" v-model="datosUsuario.permiso">
@@ -30,7 +30,7 @@
         </form>
         
         <button @click="dash" type="submit" >Dashboard</button>
-        <h5> {{salida}} </h5>
+        <!-- <h5> {{salida}} </h5> -->
         
     </div>
 </div>
@@ -43,8 +43,8 @@ import LoginVue from './Login.vue';
    export default {
     name: "Admin",
     data:function(){
-        salida: "Esperando acción"
-        rol: "Este es el rol"
+        salida: "Esperando acción";
+        rol: "Este es el rol";
       return {
        
           
@@ -76,7 +76,7 @@ import LoginVue from './Login.vue';
         axios.get("https://mihuertapp-back.herokuapp.com/usuario/permiso/"+ 
         this.datosUsuario.username).then((result) => {
           let rol = result.data.permiso
-         
+            
           if( rol == "administrador" || rol == "comprador"){
               this.salida = "Tipo de usuario: "+ rol//result.data.permiso
               //alert(this.salida)
@@ -94,6 +94,9 @@ import LoginVue from './Login.vue';
                         document.getElementById("Rol").value = rol
 
                         console.log(this.salida)
+                        if (this.salida == "Usuario no registrado"){alert("Usuario no registrado")}
+
+
                       }).catch((error) => {
         alert("ERROR Servidor");
         console.log(error);
@@ -115,6 +118,7 @@ import LoginVue from './Login.vue';
             if (operacion_exitosa == "Usuario creado exitosamente"){
                 this.salida = "Usuario  " + self.datosUsuario.username + " creado exitosamente"
             }else {this.salida = "No es posible crear el usuario"}
+            alert(this.salida)
         }).catch((error)=>{
             alert("ERROR Servidor");
             console.log(error);
@@ -186,6 +190,7 @@ import LoginVue from './Login.vue';
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        min-height: 50hv;
     }
     .consulta{
         margin: auto;
@@ -196,6 +201,7 @@ import LoginVue from './Login.vue';
         display: flex;
         justify-content: center;
         align-items: center;
+        min-height: 50hv;
     }
     .consulta h2{
         color: #ffffff;
